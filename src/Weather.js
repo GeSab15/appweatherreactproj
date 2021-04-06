@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './Weather.css';
 
-export default function Weather(){
+export default function Weather(props){
   const [wdata, setWdata] = useState({ready:false});
   function handleResponse(response) {
       setWdata({
@@ -36,14 +36,14 @@ export default function Weather(){
                 <h1>{wdata.city}</h1>
                 <ul>
                     <li>Wednesday 0700H</li>
-                    <li>{wdata.description}</li>
+                    <li className="text-capitalize">{wdata.description}</li>
                 </ul>
                 <div className="row">
                     <div className="col-6">
                         <img src={wdata.icon} alt={wdata.description} className="float-left"/>
                         <div className="float-left">
                             <span className="temperature">
-                            {wdata.temperature}
+                            {Math.round(wdata.temperature)}
                             </span>
                             <span className="unit">
                             °C
@@ -53,8 +53,8 @@ export default function Weather(){
                     <div className="col-6">
                         <ul>
                             <li>Precipitation: 17%</li>
-                            <li>Humidity: {wdata.humidity}%</li>
-                            <li>Wind: {wdata.wind}km/hr</li>
+                            <li>Humidity: {Math.round(wdata.humidity)}%</li>
+                            <li>Wind: {Math.round(wdata.wind)}km/hr</li>
                         </ul>
                     </div>
                 </div>
@@ -62,8 +62,7 @@ export default function Weather(){
             );
     } else {
         const apiKey ="8239c94054675b27ae1319054495506d";
-        let city = "London";
-        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
         axios.get(apiUrl).then(handleResponse);
 
         return "Loading...";
