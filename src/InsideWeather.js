@@ -1,5 +1,5 @@
 import React from 'react';
-import ActualDate from './ActualDate'
+import ActualDate from './ActualDate';
 
 export default function InsideWeather(props) {
     return (
@@ -23,7 +23,6 @@ export default function InsideWeather(props) {
                     </div>
                     <div className="col-6">
                         <ul>
-                            <li>Precipitation: 17%</li>
                             <li>Humidity: {Math.round(props.data.humidity)}%</li>
                             <li>Wind: {Math.round(props.data.wind)}km/hr</li>
                         </ul>
