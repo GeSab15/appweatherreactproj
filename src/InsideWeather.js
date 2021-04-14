@@ -1,5 +1,6 @@
 import React from 'react';
 import ActualDate from './ActualDate';
+import WeatherUnits from './WeatherUnits';
 
 export default function InsideWeather(props) {
     return (
@@ -13,12 +14,7 @@ export default function InsideWeather(props) {
                     <div className="col-6">
                         <img src={props.data.icon} alt={props.data.description} className="float-left"/>
                         <div className="float-left">
-                            <span className="temperature">
-                            {Math.round(props.data.temperature)}
-                            </span>
-                            <span className="unit">
-                            °C
-                            </span>
+                            <WeatherUnits celsius= {props.data.temperature} />
                         </div>
                     </div>
                     <div className="col-6">
