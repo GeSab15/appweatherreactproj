@@ -8,8 +8,8 @@ export default function App() {
       <div className="container">
       <Weather defaultCity="Seoul" />
     <footer>
-      Coded by Gerril Lañada.{" "}
-    <a href="https://github.com/GeSab15/appweatherreactproj">See the repository.</a>
+      Coded by Gerril Lañada. Hosted on Netlify.{" "}
+    <a href="https://github.com/GeSab15/appweatherreactproj" rel="noopenner noreferrer">See the repository.</a>
     </footer>
       </div>
     </div>

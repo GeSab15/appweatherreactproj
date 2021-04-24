@@ -4,12 +4,12 @@ import WIcon from './WIcon';
 export default function ForecastDay(props) {
   function maxTemp() {
     let temp = Math.round(props.data.temp.max);
-    return `${temp}°`;
+    return `${temp}°C`;
   }
 
   function minTemp() {
     let temp = Math.round(props.data.temp.min);
-    return `${temp}°`;
+    return `${temp}°C`;
   }
 
   function day() {
