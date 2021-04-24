@@ -1,0 +1,21 @@
+.Forecast {
+  text-align: center;
+}
+
+.Forecast-day {
+  color: #fdca40;
+}
+
+.Forecast-icon {
+  size: 26;
+}
+
+.Forecast-temp-min {
+  opacity: 0.6;
+  margin-left: 5px;
+  color: #fb3640;
+}
+
+.Forecast-temp-max {
+  color: #fb3640;
+}

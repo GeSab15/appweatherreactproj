@@ -1,6 +1,7 @@
 import React from 'react';
 import ActualDate from './ActualDate';
 import WeatherUnits from './WeatherUnits';
+import WIcon from './WIcon';
 
 export default function InsideWeather(props) {
     return (
@@ -12,7 +13,9 @@ export default function InsideWeather(props) {
                 </ul>
                 <div className="row">
                     <div className="col-6">
-                        <img src={props.data.icon} alt={props.data.description} className="float-left"/>
+                        <div className="float-left">
+                        <WIcon code={props.data.icon} alt={props.data.description} size={52} />
+                        </div>
                         <div className="float-left">
                             <WeatherUnits celsius= {props.data.temperature} />
                         </div>
